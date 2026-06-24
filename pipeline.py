@@ -85,7 +85,10 @@ def load_to_postgres(df, host, database, user, password):
 def main():
     df = fetch_prices(TICKERS, PERIOD, INTERVAL)
     upload_to_blob(df, BLOB_CONTAINER, BLOB_CONN_STR)
-    load_to_postgres(df, PG_HOST, PG_DB, PG_USER, PG_PW)
+    try:
+        load_to_postgres(df, PG_HOST, PG_DB, PG_USER, PG_PW)
+    except Exception as e:
+        log.warning("Postgres not available, skipping: %s", e)
     log.info("Pipeline complete.")
 
 
