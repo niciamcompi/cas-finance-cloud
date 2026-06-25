@@ -20,10 +20,10 @@ INTERVAL = os.getenv("INTERVAL", "1d")
 BLOB_CONN_STR  = os.environ["AZURE_STORAGE_CONNECTION_STRING"]
 BLOB_CONTAINER = os.getenv("BLOB_CONTAINER", "raw-prices")
 
-PG_HOST = os.environ["PG_HOST"]
-PG_DB   = os.environ["PG_DATABASE"]
-PG_USER = os.environ["PG_USER"]
-PG_PW   = os.environ["PG_PASSWORD"]
+PG_HOST = os.getenv("PG_HOST", "")
+PG_DB   = os.getenv("PG_DATABASE", "")
+PG_USER = os.getenv("PG_USER", "")
+PG_PW   = os.getenv("PG_PASSWORD", "")
 
 
 def fetch_prices(tickers, period, interval):
