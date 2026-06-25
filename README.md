@@ -1,4 +1,4 @@
-# CAS Finance Cloud – Swiss Stock Price Pipeline
+# CAS Finance Cloud â€“ Swiss Stock Price Pipeline
 
 Automated pipeline that fetches Swiss stock prices (SMI constituents) via Yahoo Finance,
 stores raw CSV files in Azure Blob Storage, and upserts data into PostgreSQL.
@@ -28,4 +28,4 @@ Pipeline runs automatically on push and on a daily schedule.
 Secrets are stored as GitLab CI/CD Variables (masked).
 
 ## Author
-Nicola Rothlin – CAS Data Engineering, FHNW 2026
+Nicola Rothlin, FHNW 2026
